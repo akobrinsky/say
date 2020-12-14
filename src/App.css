@@ -1,0 +1,22 @@
+html,
+#root {
+  background: #f1f1f4;
+}
+.redditmedia video {
+  min-width: 140px;
+}
+@media screen and (max-device-width: 768px) {
+  .redditmedia figure {
+    margin: 0 0 1.5em 0;
+  }
+  .redditmedia video {
+    width: 100%;
+  }
+}
+
+.award-image {
+  transition: transform 0.2s;
+}
+.award-image:hover {
+  transform: scale(1.5);
+}
