@@ -4,8 +4,8 @@ import RedditWrapper from './RedditWrapper';
 
 const RedditFetch = () => {
   const [fetchedData, setFetchedData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [cats, setCats] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState({});
 
   useEffect(() => {
     setLoading(true);
@@ -13,7 +13,7 @@ const RedditFetch = () => {
       .then((res) => res.json())
       .then((res) => {
         const { data } = res;
-        const categorySet = new Set().add('All');
+        const categoryObj = { All: data.dist };
         const redditPosts = data.children.map((post) => {
           const { data } = post;
           const insertPost = {
@@ -31,12 +31,12 @@ const RedditFetch = () => {
             isVideo: data.is_video,
             date: new Date(data.created * 1000).toLocaleDateString('en-US'),
           };
-          categorySet.add(data.subreddit);
+          categoryObj[data.subreddit] = categoryObj[data.subreddit] + 1 || 1;
           return insertPost;
         });
         // sorting right in the fetch so when we filter they will already be sorted by 'ups'
         redditPosts.sort((a, b) => b.ups - a.ups);
-        setCats([...categorySet]);
+        setCategories({ ...categoryObj });
         setFetchedData([...redditPosts]);
         setLoading(false);
       });
@@ -47,7 +47,11 @@ const RedditFetch = () => {
       {loading ? (
         <Loader />
       ) : (
-        <RedditWrapper cats={cats} loading={loading} posts={fetchedData} />
+        <RedditWrapper
+          categories={categories}
+          loading={loading}
+          posts={fetchedData}
+        />
       )}
     </>
   );

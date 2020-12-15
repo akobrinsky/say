@@ -8,11 +8,10 @@ const Awards = ({ postData }) => {
           alt={`award-${idx}`}
           className="image is-24x24 award-image"
           src={award.icon_url}
-        ></img>
+        />
       </li>
     );
   });
-  // return <>{awards}</>;
 };
 
 export default Awards;

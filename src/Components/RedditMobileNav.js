@@ -4,7 +4,7 @@ const RedditMobileNav = ({ clickHandler, categories }) => {
   return (
     <div className="select is-hidden-desktop mb-5">
       <select onChange={(e) => clickHandler(e.target.value)}>
-        {categories.map((item, idx) => {
+        {Object.keys(categories).map((item, idx) => {
           return (
             <option value={item} name={item} key={`redditmobilenav-${idx}`}>
               {item}

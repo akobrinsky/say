@@ -1,20 +1,21 @@
 import React from 'react';
-import RedditNavLink from '../RedditNavLink/RedditNavLink';
+import RedditNavLink from './RedditNavLink';
 
-const RedditNav = (props) => {
+const RedditNav = ({ categories, activeIdx, clickHandler }) => {
   return (
     <div className="is-hidden-mobile">
       <aside className="menu">
         <p className="menu-label">Subreddits</p>
         <ul className="menu-list">
-          {props.categories.map((item, idx) => {
+          {Object.keys(categories).map((item, idx) => {
             return (
               <RedditNavLink
                 key={`redditnav-${idx}`}
                 title={item}
-                clickHandler={props.clickHandler}
+                clickHandler={clickHandler}
                 idx={idx}
-                activeIdx={props.activeIdx}
+                amount={categories[item]}
+                activeIdx={activeIdx}
               />
             );
           })}

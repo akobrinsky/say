@@ -1,6 +1,6 @@
 import React from 'react';
-import Media from '../Media/Media';
-import Awards from '../Awards/Awards';
+import Media from './Media';
+import Awards from './Awards';
 
 const SinglePost = ({ postData }) => {
   return (
@@ -17,7 +17,7 @@ const SinglePost = ({ postData }) => {
             </ul>
 
             <span className="tag">Ups</span>
-            <div className="tag is-success" href="">
+            <div className="tag is-primary" href="">
               {postData.ups}
             </div>
           </div>

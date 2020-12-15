@@ -20,3 +20,16 @@ html,
 .award-image:hover {
   transform: scale(1.5);
 }
+
+.subreddit-nav {
+  cursor: pointer;
+  color: #4a4a4a;
+  border-radius: 4px;
+}
+.subreddit-nav:hover {
+  background: #f9fafc;
+}
+.subreddit-nav.is-active {
+  background: #3273dc;
+  color: #fff;
+}
