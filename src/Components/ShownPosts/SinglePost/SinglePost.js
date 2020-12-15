@@ -1,6 +1,6 @@
 import React from 'react';
-import Media from '../Media/Media';
-import Awards from '../Awards/Awards';
+import Media from './Media/Media';
+import Awards from './Awards/Awards';
 
 const SinglePost = ({ postData }) => {
   return (
