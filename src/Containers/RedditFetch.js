@@ -29,7 +29,7 @@ const RedditFetch = () => {
             url: data.url,
             media: data.media,
             isVideo: data.is_video,
-            date: new Date(data.created * 1000).toLocaleDateString('en-US'),
+            date: new Date(data.created_utc * 1000).toLocaleDateString('en-US'),
           };
           categoryObj[data.subreddit] = categoryObj[data.subreddit] + 1 || 1;
           return insertPost;
