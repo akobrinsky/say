@@ -5,7 +5,7 @@ const RedditNavLink = ({ title, clickHandler, idx, activeIdx, amount }) => {
   return (
     <li onClick={(e) => clickHandler(title, idx)}>
       <div
-        className={`subreddit-nav is-flex is-align-items-center px-3 py-2 ${
+        className={`subreddit-nav is-flex is-align-items-center is-justify-content-space-between px-3 py-2 ${
           active && 'is-active'
         }`}
       >
