@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import RedditNav from '../Components/RedditNav';
-import ShownPosts from '../Components/ShownPosts';
-import RedditMobileNav from '../Components/RedditMobileNav';
+import RedditNav from '../Components/RedditNav/RedditNav';
+import ShownPosts from '../Components/ShownPosts/ShownPosts';
+import RedditMobileNav from '../Components/RedditMobileNav/RedditMobileNav';
 
 const RedditWrapper = (props) => {
   const [shownPosts, setShownPosts] = useState([...props.posts]);

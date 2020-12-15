@@ -1,5 +1,5 @@
 import React from 'react';
-import RedditNavLink from './RedditNavLink';
+import RedditNavLink from './RedditNavLink/RedditNavLink';
 
 const RedditNav = ({ categories, activeIdx, clickHandler }) => {
   return (
